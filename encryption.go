@@ -1,4 +1,4 @@
-package encryptfile
+package encryption
 
 import (
 	"crypto/aes"
@@ -6,7 +6,6 @@ import (
 	"crypto/md5"
 	"crypto/rand"
 	"encoding/hex"
-	"fmt"
 	"io"
 	"io/ioutil"
 	"os"
@@ -62,12 +61,12 @@ func decryptFile(filename string, passphrase string) []byte {
 	return decrypt(data, passphrase)
 }
 
-func main() {
-	fmt.Println("Starting the application...")
-	ciphertext := encrypt([]byte("Hello World"), "password")
-	fmt.Printf("Encrypted: %x\n", ciphertext)
-	plaintext := decrypt(ciphertext, "password")
-	fmt.Printf("Decrypted: %s\n", plaintext)
-	encryptFile("sample.txt", []byte("Hello World"), "password1")
-	fmt.Println(string(decryptFile("sample.txt", "password1")))
-}
+// func main() {
+// 	fmt.Println("Starting the application...")
+// 	ciphertext := encrypt([]byte("Hello World"), "password")
+// 	fmt.Printf("Encrypted: %x\n", ciphertext)
+// 	plaintext := decrypt(ciphertext, "password")
+// 	fmt.Printf("Decrypted: %s\n", plaintext)
+// 	encryptFile("sample.txt", []byte("Hello World"), "password1")
+// 	fmt.Println(string(decryptFile("sample.txt", "password1")))
+// }

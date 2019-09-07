@@ -1,10 +1,9 @@
 package main
 
 import (
-	"encryptfile"
-
+	"fmt"
+	"encryption"
 )
-
 
 func main() {
 	fmt.Println("Starting the application...")
