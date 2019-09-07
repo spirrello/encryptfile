@@ -53,12 +53,12 @@ func Decrypt(data []byte, passphrase string) []byte {
 func EncryptFile(filename string, data []byte, passphrase string) {
 	f, _ := os.Create(filename)
 	defer f.Close()
-	f.Write(encrypt(data, passphrase))
+	f.Write(Encrypt(data, passphrase))
 }
 
 func DecryptFile(filename string, passphrase string) []byte {
 	data, _ := ioutil.ReadFile(filename)
-	return decrypt(data, passphrase)
+	return Decrypt(data, passphrase)
 }
 
 // func main() {
